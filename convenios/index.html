@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convenios Colectivos: qué cubren y qué pasa si no se cumplen | Micaela Alfonso</title>
-    <meta name="description" content="Guía de convenios colectivos de trabajo en Argentina: Comercio, UOCRA, Gastronómicos, Sanidad y LCT. Qué cubre cada uno y qué riesgos implica no aplicarlo bien.">
+    <title>Convenios Colectivos: para empleadores y trabajadores | Micaela Alfonso</title>
+    <meta name="description" content="Guía de convenios colectivos de trabajo en Argentina para empleadores (Comercio, UOCRA, Gastronómicos, Sanidad, LCT) y para trabajadores (cuota sindical, desafiliación, recibo de sueldo).">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -25,87 +25,163 @@
         <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
             Convenios Colectivos: <span class="text-blue-600">qué cubren y qué está en juego</span>
         </h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Aplicar mal un convenio no es solo un error administrativo. Acá te cuento qué cubre cada uno de los principales y qué riesgo real corre tu empresa si no se cumple correctamente.
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-10">
+            Elegí tu perfil para ver la información que más te sirve.
         </p>
+        <div class="flex justify-center gap-3">
+            <button id="tab-empleadores" onclick="mostrarVista('empleadores')" class="px-6 py-2.5 rounded-full font-bold text-sm transition bg-blue-600 text-white">
+                Para Empleadores
+            </button>
+            <button id="tab-trabajadores" onclick="mostrarVista('trabajadores')" class="px-6 py-2.5 rounded-full font-bold text-sm transition bg-white text-gray-600 border border-gray-200">
+                Para Trabajadores
+            </button>
+        </div>
     </header>
 
-    <section class="max-w-2xl mx-auto px-4 pb-4">
-        <div class="relative">
-            <input
-                type="text"
-                id="buscador-convenio"
-                onkeyup="filtrarConvenios()"
-                placeholder="Buscá tu convenio (ej: Comercio, UOCRA, Sanidad...)"
-                class="w-full border border-gray-200 rounded-xl px-5 py-4 text-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-        </div>
-        <p id="sin-resultados" class="hidden text-center text-gray-400 text-sm mt-4">
-            No encontré ese convenio en la lista. Escribime por WhatsApp y lo revisamos juntas.
-        </p>
-    </section>
+    <!-- ===================== VISTA EMPLEADORES ===================== -->
+    <div id="vista-empleadores">
 
-    <section class="max-w-5xl mx-auto px-4 py-12">
-        <div id="lista-convenios" class="grid md:grid-cols-2 gap-6">
+        <section class="max-w-2xl mx-auto px-4 pb-4">
+            <div class="relative">
+                <input
+                    type="text"
+                    id="buscador-convenio"
+                    onkeyup="filtrarConvenios()"
+                    placeholder="Buscá tu convenio (ej: Comercio, UOCRA, Sanidad...)"
+                    class="w-full border border-gray-200 rounded-xl px-5 py-4 text-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+            </div>
+            <p id="sin-resultados" class="hidden text-center text-gray-400 text-sm mt-4">
+                No encontré ese convenio en la lista. Escribime por WhatsApp y lo revisamos juntas.
+            </p>
+        </section>
 
-            <div class="convenio-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100" data-nombre="Comercio CCT 130/75">
-                <span class="inline-block bg-blue-100 text-blue-600 rounded-full px-3 py-1 text-xs font-bold mb-3">CCT 130/75</span>
-                <h2 class="font-bold text-xl mb-2 text-gray-900">Comercio</h2>
-                <p class="text-gray-500 text-sm mb-4">Es uno de los convenios de mayor alcance: cubre empleados de comercios, negocios y buena parte de las actividades de venta y servicios administrativos.</p>
+        <section class="max-w-5xl mx-auto px-4 py-12">
+            <div id="lista-convenios" class="grid md:grid-cols-2 gap-6">
+
+                <div class="convenio-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100" data-nombre="Comercio CCT 130/75">
+                    <span class="inline-block bg-blue-100 text-blue-600 rounded-full px-3 py-1 text-xs font-bold mb-3">CCT 130/75</span>
+                    <h2 class="font-bold text-xl mb-2 text-gray-900">Comercio</h2>
+                    <p class="text-gray-500 text-sm mb-4">Es uno de los convenios de mayor alcance: cubre empleados de comercios, negocios y buena parte de las actividades de venta y servicios administrativos.</p>
+                    <div class="bg-amber-50 border border-amber-100 rounded-xl p-4">
+                        <p class="text-amber-800 text-sm"><strong>Riesgo si se aplica mal:</strong> muchas empresas no se dan cuenta de que actividades como venta online, depósito o atención administrativa también caen bajo este convenio. Un encuadre incorrecto puede derivar en reclamos por diferencias salariales retroactivas, con intereses.</p>
+                    </div>
+                </div>
+
+                <div class="convenio-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100" data-nombre="UOCRA Construcción">
+                    <span class="inline-block bg-blue-100 text-blue-600 rounded-full px-3 py-1 text-xs font-bold mb-3">UOCRA</span>
+                    <h2 class="font-bold text-xl mb-2 text-gray-900">Construcción</h2>
+                    <p class="text-gray-500 text-sm mb-4">Aplica a los trabajadores de la construcción, un sector con alta rotación de personal y fuerte control por el riesgo físico de la actividad.</p>
+                    <div class="bg-amber-50 border border-amber-100 rounded-xl p-4">
+                        <p class="text-amber-800 text-sm"><strong>Riesgo si se aplica mal:</strong> los incumplimientos en aportes o registración suelen derivar en intimaciones, y en una obra la responsabilidad puede extenderse también a la empresa contratante principal, no solo a la subcontratista.</p>
+                    </div>
+                </div>
+
+                <div class="convenio-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100" data-nombre="Gastronómicos UTHGRA">
+                    <span class="inline-block bg-blue-100 text-blue-600 rounded-full px-3 py-1 text-xs font-bold mb-3">UTHGRA</span>
+                    <h2 class="font-bold text-xl mb-2 text-gray-900">Gastronómicos</h2>
+                    <p class="text-gray-500 text-sm mb-4">Cubre a bares, restaurantes y hotelería. Es uno de los sectores con mayor rotación y con mayor historial de informalidad laboral.</p>
+                    <div class="bg-amber-50 border border-amber-100 rounded-xl p-4">
+                        <p class="text-amber-800 text-sm"><strong>Riesgo si se aplica mal:</strong> por su visibilidad al público, es un foco habitual de inspecciones. Un empleado no registrado expone a que se reclame todo el período trabajado con sus derechos completos, no solo desde que se detecta.</p>
+                    </div>
+                </div>
+
+                <div class="convenio-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100" data-nombre="Sanidad FATSA">
+                    <span class="inline-block bg-blue-100 text-blue-600 rounded-full px-3 py-1 text-xs font-bold mb-3">FATSA</span>
+                    <h2 class="font-bold text-xl mb-2 text-gray-900">Sanidad</h2>
+                    <p class="text-gray-500 text-sm mb-4">Aplica a clínicas, sanatorios y laboratorios, con una de las estructuras de categorías más complejas del sistema, mezclando funciones administrativas, técnicas y asistenciales.</p>
+                    <div class="bg-amber-50 border border-amber-100 rounded-xl p-4">
+                        <p class="text-amber-800 text-sm"><strong>Riesgo si se aplica mal:</strong> un error de categorización no genera solo diferencias salariales — puede impactar directamente en la cobertura de obra social gremial del empleado.</p>
+                    </div>
+                </div>
+
+                <div class="convenio-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100 md:col-span-2" data-nombre="LCT Ley de Contrato de Trabajo">
+                    <span class="inline-block bg-blue-100 text-blue-600 rounded-full px-3 py-1 text-xs font-bold mb-3">LCT</span>
+                    <h2 class="font-bold text-xl mb-2 text-gray-900">Ley de Contrato de Trabajo</h2>
+                    <p class="text-gray-500 text-sm mb-4">Es el régimen general que aplica cuando la actividad de la empresa no está cubierta por un convenio colectivo específico.</p>
+                    <div class="bg-amber-50 border border-amber-100 rounded-xl p-4">
+                        <p class="text-amber-800 text-sm"><strong>Riesgo si se aplica mal:</strong> muchos empleadores creen que "no tener convenio" significa menos obligaciones. En realidad, la LCT igual establece un piso mínimo de derechos (vacaciones, aguinaldo, indemnizaciones) que hay que cumplir de todas formas.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 pb-16">
+            <p class="text-center text-gray-400 text-xs leading-relaxed">
+                Esta información es orientativa y general. Los riesgos concretos varían según la situación puntual de cada empresa, la jurisdicción y la normativa vigente al momento. No reemplaza un análisis profesional de tu caso.
+            </p>
+        </section>
+
+    </div>
+
+    <!-- ===================== VISTA TRABAJADORES ===================== -->
+    <div id="vista-trabajadores" class="hidden">
+
+        <section class="max-w-3xl mx-auto px-4 pb-6 text-center">
+            <p class="text-gray-600">Si sos trabajador y llegaste buscando información sobre tu convenio, tu recibo de sueldo o tus derechos, acá te dejo las dudas más frecuentes.</p>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 pb-8">
+            <div class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+                <span class="inline-block bg-blue-100 text-blue-600 rounded-full px-3 py-1 text-xs font-bold mb-4">La pregunta más frecuente</span>
+                <h2 class="font-bold text-2xl mb-4 text-gray-900">¿Cómo me desafilio del sindicato y dejan de cobrarme la cuota sindical?</h2>
+                <p class="text-gray-600 text-sm mb-6 leading-relaxed">La Ley de Asociaciones Sindicales (N° 23.551) establece que la afiliación a un sindicato es voluntaria, así que podés desafiliarte cuando quieras. Así se hace, paso a paso:</p>
+
+                <div class="mb-6">
+                    <ol class="list-decimal pl-5 text-gray-600 text-sm space-y-2">
+                        <li>Enviá una carta documento o telegrama al sindicato, expresando tu voluntad de desafiliarte y pidiendo el cese del descuento. Incluí tu nombre completo, DNI y CUIL.</li>
+                        <li>El sindicato tiene 30 días corridos para responder — si no lo hace, la desafiliación queda aceptada automáticamente.</li>
+                        <li>Una vez efectiva la desafiliación, avisale por escrito a tu empleador (RRHH o el área de sueldos) para que deje de descontarte la cuota. El empleador no lo hace de oficio: necesita tu pedido formal.</li>
+                    </ol>
+                </div>
+
+                <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-6">
+                    <p class="text-blue-900 text-sm"><strong>Un ejemplo para que quede claro:</strong> si presentás la baja el 12 de septiembre, el empleador tiene que esperar el plazo de 30 días que la ley le da al sindicato para expedirse antes de que la desafiliación tenga validez legal. Por eso, en el recibo de septiembre normalmente vas a seguir viendo el descuento, y recién en el de octubre debería dejar de aparecer.</p>
+                </div>
+
                 <div class="bg-amber-50 border border-amber-100 rounded-xl p-4">
-                    <p class="text-amber-800 text-sm"><strong>Riesgo si se aplica mal:</strong> muchas empresas no se dan cuenta de que actividades como venta online, depósito o atención administrativa también caen bajo este convenio. Un encuadre incorrecto puede derivar en reclamos por diferencias salariales retroactivas, con intereses.</p>
+                    <p class="text-amber-800 text-sm"><strong>Un matiz importante:</strong> en algunos convenios, además de la cuota sindical (que es solo para afiliados), existe una "contribución solidaria" que puede seguir aplicando a todos los trabajadores cubiertos por ese convenio, estén afiliados o no. Este punto está en discusión judicial en varios convenios en el marco de la reforma laboral reciente. Si te siguen descontando algo después de desafiliarte, lo mejor es consultar tu caso puntual.</p>
                 </div>
             </div>
+        </section>
 
-            <div class="convenio-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100" data-nombre="UOCRA Construcción">
-                <span class="inline-block bg-blue-100 text-blue-600 rounded-full px-3 py-1 text-xs font-bold mb-3">UOCRA</span>
-                <h2 class="font-bold text-xl mb-2 text-gray-900">Construcción</h2>
-                <p class="text-gray-500 text-sm mb-4">Aplica a los trabajadores de la construcción, un sector con alta rotación de personal y fuerte control por el riesgo físico de la actividad.</p>
-                <div class="bg-amber-50 border border-amber-100 rounded-xl p-4">
-                    <p class="text-amber-800 text-sm"><strong>Riesgo si se aplica mal:</strong> los incumplimientos en aportes o registración suelen derivar en intimaciones, y en una obra la responsabilidad puede extenderse también a la empresa contratante principal, no solo a la subcontratista.</p>
-                </div>
+        <section class="max-w-3xl mx-auto px-4 pb-16">
+            <div class="space-y-4">
+
+                <details class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm group">
+                    <summary class="font-bold text-lg cursor-pointer list-none flex justify-between items-center">
+                        ¿La cuota sindical es obligatoria?
+                        <span class="text-blue-600 group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+                    </summary>
+                    <p class="text-gray-500 text-sm mt-4">La cuota sindical en sí no es obligatoria: solo se descuenta si estás afiliado voluntariamente, y si te desafiliás, deja de cobrarse. Ahora bien, si tu actividad sigue alcanzada por un convenio o un acuerdo paritario vigente, es común que ese acuerdo incluya un "aporte extraordinario" o "solidario" a cargo de todos los trabajadores comprendidos, estén afiliados o no — como compensación por los beneficios que ese convenio les da igual. Ese aporte es distinto de la cuota sindical y no se elimina al desafiliarte.</p>
+                </details>
+
+                <details class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm group">
+                    <summary class="font-bold text-lg cursor-pointer list-none flex justify-between items-center">
+                        ¿Cómo sé qué convenio colectivo me corresponde?
+                        <span class="text-blue-600 group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+                    </summary>
+                    <p class="text-gray-500 text-sm mt-4">Depende de la actividad principal de la empresa donde trabajás, no del puesto que ocupás. Normalmente figura en tu recibo de sueldo (el número de CCT). También podés consultar la solapa "Para Empleadores" de esta misma página para ver los convenios más comunes.</p>
+                </details>
+
+                <details class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm group">
+                    <summary class="font-bold text-lg cursor-pointer list-none flex justify-between items-center">
+                        ¿Qué hago si creo que mi recibo de sueldo tiene un error?
+                        <span class="text-blue-600 group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+                    </summary>
+                    <p class="text-gray-500 text-sm mt-4">Pedí el detalle de cómo se calculó cada concepto y compará con la escala salarial vigente de tu convenio. Si la diferencia persiste, planteálo primero con RRHH de tu empresa. Si querés una segunda mirada externa sobre tu caso puntual, también puedo ayudarte a revisarlo.</p>
+                </details>
+
             </div>
+        </section>
 
-            <div class="convenio-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100" data-nombre="Gastronómicos UTHGRA">
-                <span class="inline-block bg-blue-100 text-blue-600 rounded-full px-3 py-1 text-xs font-bold mb-3">UTHGRA</span>
-                <h2 class="font-bold text-xl mb-2 text-gray-900">Gastronómicos</h2>
-                <p class="text-gray-500 text-sm mb-4">Cubre a bares, restaurantes y hotelería. Es uno de los sectores con mayor rotación y con mayor historial de informalidad laboral.</p>
-                <div class="bg-amber-50 border border-amber-100 rounded-xl p-4">
-                    <p class="text-amber-800 text-sm"><strong>Riesgo si se aplica mal:</strong> por su visibilidad al público, es un foco habitual de inspecciones. Un empleado no registrado expone a que se reclame todo el período trabajado con sus derechos completos, no solo desde que se detecta.</p>
-                </div>
-            </div>
-
-            <div class="convenio-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100" data-nombre="Sanidad FATSA">
-                <span class="inline-block bg-blue-100 text-blue-600 rounded-full px-3 py-1 text-xs font-bold mb-3">FATSA</span>
-                <h2 class="font-bold text-xl mb-2 text-gray-900">Sanidad</h2>
-                <p class="text-gray-500 text-sm mb-4">Aplica a clínicas, sanatorios y laboratorios, con una de las estructuras de categorías más complejas del sistema, mezclando funciones administrativas, técnicas y asistenciales.</p>
-                <div class="bg-amber-50 border border-amber-100 rounded-xl p-4">
-                    <p class="text-amber-800 text-sm"><strong>Riesgo si se aplica mal:</strong> un error de categorización no genera solo diferencias salariales — puede impactar directamente en la cobertura de obra social gremial del empleado.</p>
-                </div>
-            </div>
-
-            <div class="convenio-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100 md:col-span-2" data-nombre="LCT Ley de Contrato de Trabajo">
-                <span class="inline-block bg-blue-100 text-blue-600 rounded-full px-3 py-1 text-xs font-bold mb-3">LCT</span>
-                <h2 class="font-bold text-xl mb-2 text-gray-900">Ley de Contrato de Trabajo</h2>
-                <p class="text-gray-500 text-sm mb-4">Es el régimen general que aplica cuando la actividad de la empresa no está cubierta por un convenio colectivo específico.</p>
-                <div class="bg-amber-50 border border-amber-100 rounded-xl p-4">
-                    <p class="text-amber-800 text-sm"><strong>Riesgo si se aplica mal:</strong> muchos empleadores creen que "no tener convenio" significa menos obligaciones. En realidad, la LCT igual establece un piso mínimo de derechos (vacaciones, aguinaldo, indemnizaciones) que hay que cumplir de todas formas.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="max-w-3xl mx-auto px-4 pb-16">
-        <p class="text-center text-gray-400 text-xs leading-relaxed">
-            Esta información es orientativa y general. Los riesgos concretos varían según la situación puntual de cada empresa, la jurisdicción y la normativa vigente al momento. No reemplaza un análisis profesional de tu caso.
-        </p>
-    </section>
+    </div>
 
     <section class="bg-blue-900 text-white py-16">
         <div class="max-w-3xl mx-auto px-4 text-center">
-            <h3 class="text-2xl md:text-3xl font-bold mb-3">¿No estás segura de qué convenio te aplica, o si lo estás cumpliendo bien?</h3>
-            <p class="text-blue-100 mb-8">Escribime y lo revisamos juntas, sin compromiso.</p>
+            <h3 class="text-2xl md:text-3xl font-bold mb-3">¿Tenés una duda puntual sobre tu situación laboral?</h3>
+            <p class="text-blue-100 mb-8">Seas empleador o trabajador, escribime y lo vemos juntas, sin compromiso.</p>
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="https://wa.me/5491156355847" class="bg-green-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-green-700 transition">
                     Escribir por WhatsApp
@@ -143,6 +219,18 @@
             });
 
             document.getElementById('sin-resultados').classList.toggle('hidden', hayResultados);
+        }
+
+        function mostrarVista(vista) {
+            const esEmpleadores = vista === 'empleadores';
+            document.getElementById('vista-empleadores').classList.toggle('hidden', !esEmpleadores);
+            document.getElementById('vista-trabajadores').classList.toggle('hidden', esEmpleadores);
+
+            const activo = 'px-6 py-2.5 rounded-full font-bold text-sm transition bg-blue-600 text-white';
+            const inactivo = 'px-6 py-2.5 rounded-full font-bold text-sm transition bg-white text-gray-600 border border-gray-200';
+
+            document.getElementById('tab-empleadores').className = esEmpleadores ? activo : inactivo;
+            document.getElementById('tab-trabajadores').className = !esEmpleadores ? activo : inactivo;
         }
     </script>
 
